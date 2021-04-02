@@ -34,6 +34,16 @@ public class RestApiController {
         return a;
     }
 
+    @GetMapping("/todoStr")
+    public String demoStr() {
+        String a = null;
+        if (a != null) {
+            return a;
+        } else {
+            throw new NullPointerException();
+        }
+    }
+
     @PostMapping
     public String connerction() throws SQLException, ClassNotFoundException {
         Connection connection = getConnection();

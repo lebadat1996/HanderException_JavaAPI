@@ -29,6 +29,11 @@ public class ApiExceptionHandler {
     public ErrorMessage TodoException(Exception ex, WebRequest request) {
         return new ErrorMessage(10100, "Đối tượng không tồn tại");
     }
+    @ExceptionHandler(NullPointerException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public ErrorMessage NullEx(Exception ex, WebRequest request) {
+        return new ErrorMessage(400, "NullPoinEX");
+    }
 
     @ExceptionHandler(ArithmeticException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
