@@ -48,6 +48,9 @@ Trỏ đường dẫn trực tiếp đến file java trong JDK=> sau đó sử d
 
 =======Load file from resource in project Spring Boot========
 Bước 1: Tạo file config 
+@Component
+@Configuration
+@Data
 import org.springframework.core.io.Resource;
 @Value("classpath:report/form.jrxml")
     Resource resourceFile;
