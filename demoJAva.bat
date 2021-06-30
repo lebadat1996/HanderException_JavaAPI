@@ -41,6 +41,26 @@ Bước 4: Kiểm tra PATH
 	java -version
 End
 
+Or trỏ đường dẫn trực tiếp đến file java trong JDK=> sau đó sử dung pathFileto java -jar myFile.jar
+
+=======Load file from resource in project Spring Boot========
+Bước 1: Tạo file config 
+import org.springframework.core.io.Resource;
+@Value("classpath:report/form.jrxml")
+    Resource resourceFile;
+Bước 2    Load file
+log.info("path: " + config.getResourceFile().getURL().getPath());
+ InputStream inputStream = new FileInputStream(new File(path));
+        JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
+        JRDataSource dataSource = new JREmptyDataSource();
+        Map<String, Object> parameters = new HashMap<String, Object>();
+        parameters.put("departmentName", "A");
+        parameters.put("dutyYear", "2021");
+        parameters.put("director", "B");
+        parameters.put("notyDate", "12");
+        JasperPrint pdfPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
+        JasperExportManager.exportReportToPdfFile(pdfPrint, constants.getFile());
+        log.info("Export Report Success");
 
 
 
