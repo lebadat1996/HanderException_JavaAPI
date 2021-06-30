@@ -11,6 +11,7 @@ pause
 
 
 ====RUN FILE .SH VÀ SET MÔI TRƯỜNG JAVA TRONG LINUX=====
+Cách 1 ====================
 Bước 1 : Tạo file sh
 touch name_file;
 content:
@@ -41,7 +42,9 @@ Bước 4: Kiểm tra PATH
 	java -version
 End
 
-Or trỏ đường dẫn trực tiếp đến file java trong JDK=> sau đó sử dung pathFileto java -jar myFile.jar
+
+Cách 2 ====================
+Trỏ đường dẫn trực tiếp đến file java trong JDK=> sau đó sử dung pathFileto java -jar myFile.jar
 
 =======Load file from resource in project Spring Boot========
 Bước 1: Tạo file config 
