@@ -68,5 +68,8 @@ log.info("path: " + config.getResourceFile().getURL().getPath());
         JasperExportManager.exportReportToPdfFile(pdfPrint, constants.getFile());
         log.info("Export Report Success");
 
-
+=> theo dõi quản lý transacton trong spring
+logging.level.org.springframework.transaction.interceptor=TRACE
+=> nếu là spring thường sử dụng @EnableTransactionManagement để triểu khai transaction
+=> nếu là spring boot ta có thể sử dụng @transaction luôn để quản lý transaction mình mong muốn
 
